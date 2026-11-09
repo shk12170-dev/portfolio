@@ -125,3 +125,5 @@ html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="
   .acc-panel dd, .mini dd { margin-bottom: 8px; }
   h2 { font-size: 22px; }
 }
+
+main:focus{outline:none}
