@@ -48,6 +48,7 @@
         <ul>
           <li><a href="#skills">기술</a></li>
           <li><a href="#aleph">ALEPH</a></li>
+          <li><a href="#solo">개인 프로젝트</a></li>
           <li><a href="#s7">S7 변조 탐지</a></li>
           <li><a href="#troubleshoot">문제 해결</a></li>
           <li><a href="#career">경력</a></li>
@@ -66,15 +67,15 @@
           <p class="status-pill"><span class="pulse" aria-hidden="true"></span>네트워크 보안 엔지니어 지원 · 2026.11</p>
           <h1 id="h-name">김상혁</h1>
           <p class="tagline">공격이 들어오는 길을 열어 보고,<br class="br-wide"> <em>막히는지 재고, 되돌린 뒤</em> 기록으로 남깁니다.</p>
-          <p class="summary">약 9년의 군 복무 뒤 SKT ALEPH 과정에서 보안관제를 배웠습니다. 4인 팀 프로젝트에서 Wazuh 관제 서버와 사건 기록(티켓) 시스템을 맡아 공격 → 탐지 → 자동 대응 → 원복 흐름을 실측했습니다.</p>
-          <ul class="fact-row" aria-label="프로젝트 규모">
-            <li><strong>4</strong><span>인 팀</span></li>
-            <li><strong>4</strong><span>대 PC + 팀 VPN</span></li>
-            <li><strong>4</strong><span>개 공격 시나리오 완주</span></li>
+          <p class="summary">약 9년의 군 복무 뒤 SKT ALEPH 과정에서 보안관제를 배웠습니다. 4인 팀 프로젝트에서 Wazuh 관제 서버와 사건 기록(티켓)을 맡아 공격 → 탐지 → 자동 대응 → 원복 흐름을 실측했고, 이후 같은 시스템을 혼자 PC 한 대에서 다시 설계·구현했습니다.</p>
+          <ul class="fact-row" aria-label="프로젝트 요약">
+            <li><strong>4</strong><span>인 팀 · PC 4대</span></li>
+            <li><strong>1</strong><span>인 재구현 · PC 1대</span></li>
+            <li><strong>29/30</strong><span>자동 대응 확인</span></li>
           </ul>
           <p class="actions">
-            <a class="btn" href="#aleph">ALEPH 프로젝트 보기<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn ghost" href="https://github.com/shk12170-dev" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (새 탭)</span></a>
+            <a class="btn" href="#aleph">팀 프로젝트 보기<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn ghost" href="#solo">개인 프로젝트 보기</a>
           </p>
         </div>
 
@@ -119,12 +120,12 @@
         <article class="card skill">
           <svg class="ico-lg" aria-hidden="true"><use href="#i-bolt"/></svg>
           <h3>자동 대응 · 개발</h3>
-          <ul class="chips"><li class="chip">n8n 2.39.5 연동</li><li class="chip">Python</li><li class="chip">Flask</li><li class="chip">SQLite</li><li class="chip">REST API 설계</li><li class="chip">pytest</li></ul>
+          <ul class="chips"><li class="chip">Python</li><li class="chip">FastAPI</li><li class="chip">Flask</li><li class="chip">SQLite</li><li class="chip">n8n</li><li class="chip">REST API 설계</li><li class="chip">pytest</li></ul>
         </article>
         <article class="card skill">
           <svg class="ico-lg" aria-hidden="true"><use href="#i-box"/></svg>
           <h3>인프라 · 협업</h3>
-          <ul class="chips"><li class="chip">Docker Compose</li><li class="chip">VMware</li><li class="chip">Kali Linux</li><li class="chip">Git · GitHub PR</li><li class="chip">증적 · 작업일지</li></ul>
+          <ul class="chips"><li class="chip">Docker Compose</li><li class="chip">VMware</li><li class="chip">Kali Linux</li><li class="chip">React (Vite)</li><li class="chip">GitHub Actions</li><li class="chip">Playwright</li><li class="chip">Git · GitHub PR</li></ul>
         </article>
       </div>
       <p class="note">학습·준비 중: 정보처리기사, SQL 자격증</p>
@@ -276,10 +277,101 @@
       </div>
     </section>
 
-    <!-- 03 S7 -->
-    <section id="s7" class="wrap block" aria-labelledby="h-s7">
+    <!-- 03 개인 프로젝트 -->
+    <section id="solo" class="wrap block" aria-labelledby="h-solo">
       <header class="sec-head">
-        <p class="eyebrow">03 · Personal Case</p>
+        <p class="eyebrow">03 · Solo Project</p>
+        <h2 id="h-solo">nobugs-soar — 팀 캡스톤을 혼자, PC 한 대에서 다시 만든 SOAR</h2>
+        <ul class="meta">
+          <li>2026.11 · 진행 중</li>
+          <li class="meta-me">1인 설계·구현 · AI 코딩 도구(Claude Code) 보조</li>
+          <li>공개 저장소 · MIT</li>
+        </ul>
+        <p class="lead">팀 코드를 옮기지 않고 동작 명세만 보고 새로 작성했습니다. 대응 로직을 n8n 워크플로 대신 직접 만든 Python 대응 엔진으로 구현해, 공격 → 탐지 → 자동 대응 → 효과 확인 → 원복이 사람 손 없이 돌게 했습니다.</p>
+        <p class="actions head-actions"><a class="btn" href="https://github.com/shk12170-dev/nobugs-soar" target="_blank" rel="noopener noreferrer">저장소 보기<span class="sr-only"> (새 탭)</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </header>
+
+      <ul class="stat-row" aria-label="개인 프로젝트 수치">
+        <li><span class="num">6</span><span class="lbl">공격 시나리오<br>S1·S4·S7·S8·S10·S12</span></li>
+        <li><span class="num">29<small>/30</small></span><span class="lbl">자동 대응 확인<br>케이스별 5회 반복</span></li>
+        <li><span class="num">≈60<small>s</small></span><span class="lbl">공격 → 효과 확인<br>대부분 회차</span></li>
+        <li><span class="num">349</span><span class="lbl">Python 테스트 통과<br>+ 프론트 23 · E2E 7</span></li>
+      </ul>
+
+      <h3 class="sub">팀 버전과 달라진 점</h3>
+      <div class="compare" role="table" aria-label="팀 버전과 개인 버전 비교">
+        <div class="cmp-row cmp-head" role="row"><span role="columnheader">항목</span><span role="columnheader">팀 ALEPH</span><span role="columnheader">개인 nobugs-soar</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">규모</span><span role="cell">4인 · PC 4대 · 팀 VPN</span><span role="cell">1인 · PC 1대 · Docker 관제 스택</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">대응 로직</span><span role="cell">n8n 워크플로로 조립</span><span role="cell">직접 만든 Python 대응 엔진 (n8n은 S1 중계)</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">원복</span><span role="cell">사람이 해제</span><span role="cell">TTL 자동 원복 (S1·S8·S10), S4·S7은 사람 확인</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">S7 변조 복구</span><span role="cell">수동 복구만 확인</span><span role="cell">Wazuh FIM → Graylog → 엔진 자동 복구</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">반복 측정</span><span role="cell">케이스별 1~2회</span><span role="cell">6케이스 × 5회 자동 측정 도구</span></div>
+      </div>
+
+      <div class="solo-grid">
+        <div>
+          <h3 class="sub">대응 엔진 — 티켓 상태 기계</h3>
+          <ol class="states" aria-label="티켓 상태 흐름">
+            <li>open</li><li>responding</li><li>verified</li><li>restored</li><li>closed</li>
+          </ol>
+          <ul class="design-list single">
+            <li><strong>멱등 조치</strong>같은 사건에 웹훅이 여러 번 와도 차단·잠금은 한 번만</li>
+            <li><strong>반영·효과 확인</strong>차단 목록을 다시 조회하고, 실제 요청이 403으로 막히는지 확인. 확인할 수 없으면 성공으로 치지 않음</li>
+            <li><strong>자동 원복</strong>정해진 시간이 지나면 엔진이 해제하고 원복을 기록</li>
+          </ul>
+        </div>
+        <figure class="shot">
+          <img src="assets/nobugs-control-panel.jpg" width="788" height="520" loading="lazy" alt="실습 제어판 화면. 공격 버튼 아래 티켓마다 공격·탐지·조치·반영 확인·효과 확인·원복 여섯 단계가 초록으로 채워져 있다.">
+          <figcaption>실습 제어판 — 공격 버튼을 누르면 티켓이 6단계를 밟는 모습을 한 화면에서 확인 (루프백 주소·시험 계정)</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="sub">반복 측정 결과 <span class="sub-note">2026-11-10 · 케이스별 5회</span></h3>
+      <ul class="bars">
+        <li><span class="bar-id">S1</span><span class="bar-name">로그인 무차별 대입 → IP 차단</span><span class="bar"><i style="width:100%"></i></span><span class="bar-val">5/5</span></li>
+        <li><span class="bar-id">S4</span><span class="bar-name">실패 뒤 로그인 성공 → 계정 잠금·세션 회수</span><span class="bar"><i style="width:100%"></i></span><span class="bar-val">5/5</span></li>
+        <li><span class="bar-id">S7</span><span class="bar-name">홈페이지 변조 → 기준본 복구</span><span class="bar"><i class="part" style="width:80%"></i></span><span class="bar-val">4/5</span></li>
+        <li><span class="bar-id">S8</span><span class="bar-name">웹 스캔 뒤 로그인 → IP 차단</span><span class="bar"><i style="width:100%"></i></span><span class="bar-val">5/5</span></li>
+        <li><span class="bar-id">S10</span><span class="bar-name">스캔·로그인·경계 신호 연쇄 → 앱 + 경계 차단</span><span class="bar"><i style="width:100%"></i></span><span class="bar-val">5/5</span></li>
+        <li><span class="bar-id">S12</span><span class="bar-name">요청 폭주 → 서비스가 멀쩡하면 차단하지 않음</span><span class="bar"><i style="width:100%"></i></span><span class="bar-val">5/5</span></li>
+      </ul>
+      <p class="note">S7 5회차는 같은 파일을 10분 안에 다시 바꿔 재알림 묵음 기간에 걸린 측정 설계의 한계였고, 묵음이 끝난 뒤 복구까지 정상으로 끝났습니다. S12는 다섯 번 모두 "조치 없음"이 맞는 결과입니다.</p>
+
+      <h3 class="sub">시험하면서 찾아 고친 문제</h3>
+      <div class="grid-3">
+        <article class="card ts">
+          <p class="evidence">탐지 2개가 같은 트래픽에 동시 발동</p>
+          <h3>IP 차단이 두 번 기록된다</h3>
+          <dl>
+            <dt class="d-cause">원인</dt><dd>S8·S10 정의가 동시에 엔진을 불러 판단·조치가 겹침</dd>
+            <dt class="d-fix">해결</dt><dd>엔진의 판단·조치 구간을 락으로 직렬화, 조치를 멱등으로</dd>
+          </dl>
+        </article>
+        <article class="card ts">
+          <p class="evidence">에러 없음 ≠ 동작함</p>
+          <h3>S7 이벤트가 조용히 안 생긴다</h3>
+          <dl>
+            <dt class="d-cause">원인</dt><dd>Graylog 필드 계산이 출발지 IP를 필수로 요구, 웹훅 본문엔 파일 정보가 빠져 엔진이 무시</dd>
+            <dt class="d-fix">해결</dt><dd>S7만 필수 조건 완화, 본문에 자산·파일 키 추가, 데이터 계약을 테스트로 고정</dd>
+          </dl>
+        </article>
+        <article class="card ts">
+          <p class="evidence">외부 UDP 20건 중 0건 전달</p>
+          <h3>pfSense 로그가 Graylog에 안 온다</h3>
+          <dl>
+            <dt class="d-cause">원인</dt><dd>Docker Desktop(WSL2)이 외부 UDP를 컨테이너로 거의 넘기지 못함</dd>
+            <dt class="d-fix">해결</dt><dd>호스트 syslog 중계기가 UDP로 받아 GELF/TCP로 전달, 방화벽 차단 로그 수신 확인</dd>
+          </dl>
+        </article>
+      </div>
+      <p class="callout"><strong>범위 밖으로 남긴 것</strong> 경계 차단은 상태만 재현하는 시뮬레이터이고, 엔진이 pfSense를 직접 조작하는 실제 IP 차단은 아직 없습니다. 엔진 조회 화면은 이 PC(127.0.0.1)에서만 열리며 인증은 쓰기·웹훅에만 걸려 있습니다.</p>
+    </section>
+
+    <!-- 04 S7 -->
+    <section id="s7" class="block band" aria-labelledby="h-s7">
+      <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">04 · Team Case</p>
         <h2 id="h-s7">S7 — 홈페이지 변조 탐지와 복구</h2>
         <p class="lead">자리마다 하나씩 맡은 케이스 중 제 몫(무결성)입니다. 자동 복구 완주는 못 해 최종 발표 네 케이스에는 들어가지 않았습니다.</p>
       </header>
@@ -311,16 +403,17 @@
           </ul>
         </article>
       </div>
-      <p class="callout"><strong>배운 점</strong> 자동 대응은 "복구가 다시 경보를 만든다"는 부작용부터 다뤄야 스스로를 공격으로 오인하지 않습니다. 복구 경보를 기준본 해시로 걸러낸 것이 이 케이스에서 가장 의미 있게 확인한 부분입니다.</p>
+      <p class="callout"><strong>배운 점</strong> 자동 대응은 "복구가 다시 경보를 만든다"는 부작용부터 다뤄야 스스로를 공격으로 오인하지 않습니다. 복구 경보를 기준본 해시로 걸러낸 것이 이 케이스에서 가장 의미 있게 확인한 부분입니다. 못 한 자동 복구는 <a href="#solo">개인 프로젝트</a>에서 다시 구현해 5회 중 4회 확인했습니다.</p>
+      </div>
     </section>
 
-    <!-- 04 문제 해결 -->
-    <section id="troubleshoot" class="block band" aria-labelledby="h-ts">
+    <!-- 05 문제 해결 -->
+    <section id="troubleshoot" class="block" aria-labelledby="h-ts">
       <div class="wrap">
         <header class="sec-head">
-          <p class="eyebrow">04 · Troubleshooting</p>
-          <h2 id="h-ts">네트워크 문제 해결 기록</h2>
-          <p class="lead">추측으로 끝내지 않고, 시험으로 원인을 좁혀서 고친 사례입니다.</p>
+          <p class="eyebrow">05 · Troubleshooting</p>
+          <h2 id="h-ts">네트워크 문제 해결 기록 — 팀 랩</h2>
+          <p class="lead">PC 4대를 VPN으로 묶은 팀 랩에서, 추측으로 끝내지 않고 시험으로 원인을 좁혀서 고친 사례입니다.</p>
         </header>
         <div class="grid-3">
           <article class="card ts">
@@ -355,28 +448,28 @@
       </div>
     </section>
 
-    <!-- 05 경력 -->
+    <!-- 06 경력 -->
     <section id="career" class="wrap block" aria-labelledby="h-career">
       <header class="sec-head">
-        <p class="eyebrow">05 · Career</p>
+        <p class="eyebrow">06 · Career</p>
         <h2 id="h-career">경력</h2>
         <p class="lead">절차를 지키고 근무를 교대로 이어받던 습관을, 네 명이 순서대로 넘겨받는 관제 운영에 그대로 썼습니다.</p>
       </header>
       <ol class="timeline">
-        <li class="now"><p class="when">2026.08 ~ 2026.11</p><h3>SKT ALEPH 교육과정</h3><p>웹 개발 기초 과제 뒤 보안관제 캡스톤 ALEPH, 11/06 본발표</p></li>
+        <li class="now"><p class="when">2026.08 ~ 2026.11</p><h3>SKT ALEPH 교육과정</h3><p>웹 개발 기초 과제 뒤 보안관제 캡스톤 ALEPH(11/06 본발표), 이후 개인 재구현 nobugs-soar</p></li>
         <li><p class="when">2019.07 ~ 2026.07</p><h3>육군 부사관</h3><p>GOP 근무를 포함해 복무 후 전역</p></li>
         <li><p class="when">2017.10 ~ 2019.07</p><h3>육군 병사</h3><p>만기 전역 뒤 부사관 임관</p></li>
         <li><p class="when">2012.10 ~ 2014.04</p><h3>아마추어 농구선수</h3><p>포워드·센터, 팀 안의 역할 지키기</p></li>
       </ol>
     </section>
 
-    <!-- 06 연락 -->
+    <!-- 07 연락 -->
     <section id="contact" class="wrap block" aria-labelledby="h-contact">
       <div class="cta">
         <div>
-          <p class="eyebrow">06 · Contact</p>
+          <p class="eyebrow">07 · Contact</p>
           <h2 id="h-contact">연락 · 소스</h2>
-          <p>팀 프로젝트 저장소는 비공개입니다. 개인 저장소와 이 페이지의 소스는 GitHub에서 볼 수 있습니다.</p>
+          <p>팀 프로젝트 저장소는 비공개입니다. 개인 프로젝트 <a href="https://github.com/shk12170-dev/nobugs-soar" target="_blank" rel="noopener noreferrer">nobugs-soar<span class="sr-only"> (새 탭)</span></a>와 이 페이지의 소스는 GitHub에서 볼 수 있습니다.</p>
         </div>
         <p class="actions"><a class="btn" href="mailto:shk12170@gmail.com">shk12170@gmail.com</a> <a class="btn ghost" href="https://github.com/shk12170-dev" target="_blank" rel="noopener noreferrer">github.com/shk12170-dev<span class="sr-only"> (새 탭)</span></a></p>
       </div>
