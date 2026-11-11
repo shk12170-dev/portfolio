@@ -17,22 +17,4 @@
   toggle.addEventListener('click', function () {
     setMotion(toggle.getAttribute('aria-pressed') !== 'true');
   });
-
-  Array.prototype.forEach.call(document.querySelectorAll('.acc-panel'), function (p) { p.hidden = true; });
-
-  // <button>이므로 클릭·Enter·Space가 모두 click 이벤트로 동작한다.
-  var buttons = document.querySelectorAll('.acc-btn');
-  Array.prototype.forEach.call(buttons, function (btn) {
-    btn.addEventListener('click', function () {
-      var panel = document.getElementById(btn.getAttribute('aria-controls'));
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      panel.hidden = open;
-      if (!open) {
-        panel.classList.remove('opening');
-        void panel.offsetWidth;
-        panel.classList.add('opening');
-      }
-    });
-  });
 })();
