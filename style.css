@@ -127,3 +127,40 @@ html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="
 }
 
 main:focus{outline:none}
+
+/* 2026-11 네트워크 보안 개편 */
+.small { font-size: 14px; color: var(--sub); margin: 10px 0 0; }
+.panel .small { color: #c4d2ea; }
+.metrics { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.metrics li { display: flex; align-items: baseline; gap: 12px; }
+.metrics .num { font-size: 26px; font-weight: 800; color: #fff; min-width: 92px; }
+.metrics .lbl { color: #dbe4f3; font-size: 15px; }
+.card-grid.two { grid-template-columns: repeat(2, 1fr); }
+.list.plain { list-style: none; padding-left: 0; }
+.sub { font-size: 20px; margin: 28px 0 12px; }
+.acc h4 { margin: 0; }
+.arch { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.flow li { position: relative; background: #eef2fa; border: 1px solid #c9d5ea; border-radius: 8px; padding: 12px; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.flow li:not(:last-child)::after { content: "\2192"; position: absolute; right: -10px; top: 50%; transform: translate(50%, -50%); color: var(--accent); font-weight: 700; }
+.flow .step { font-weight: 800; color: var(--accent-dark); }
+.flow .who { font-size: 14px; font-weight: 700; }
+.flow .desc { font-size: 14px; color: var(--sub); }
+.arch figcaption { margin-top: 12px; font-size: 14px; color: var(--sub); }
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { background: #eef2fa; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+tbody th { color: var(--accent-dark); }
+@media (max-width: 1100px) {
+  .flow { grid-template-columns: repeat(3, 1fr); }
+  .flow li:nth-child(3)::after { display: none; }
+}
+@media (max-width: 640px) {
+  .card-grid.two { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .flow li::after { display: none; }
+  .metrics .num { font-size: 22px; min-width: 76px; }
+  th, td { padding: 8px 10px; }
+}

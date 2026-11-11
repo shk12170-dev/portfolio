@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>김상혁 | 예비 웹 개발자 포트폴리오</title><link rel="icon" href="data:,">
-  <meta name="description" content="군 복무를 마치고 웹 개발을 배우는 김상혁의 포트폴리오. 기술 스펙, 참여 프로젝트, 기록으로 확인되는 강점을 담았습니다.">
+  <title>김상혁 | 네트워크 보안 엔지니어 포트폴리오</title><link rel="icon" href="data:,">
+  <meta name="description" content="네트워크 보안 엔지니어 지원자 김상혁의 포트폴리오. PC 4대와 팀 VPN 위에 보안관제망을 구성하고 공격 탐지·자동 대응·원복을 실측한 ALEPH 프로젝트를 담았습니다.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,13 +12,13 @@
 
   <header class="top">
     <div class="wrap top-in">
-      <p class="brand">김상혁 포트폴리오</p>
+      <p class="brand">김상혁 · Network Security</p>
       <nav aria-label="페이지 이동">
         <ul>
-          <li><a href="#skills">기술 스펙</a></li>
-          <li><a href="#projects">참여 프로젝트</a></li>
+          <li><a href="#skills">기술</a></li>
+          <li><a href="#aleph">ALEPH 프로젝트</a></li>
+          <li><a href="#troubleshoot">문제 해결</a></li>
           <li><a href="#career">경력</a></li>
-          <li><a href="#strengths">강점</a></li>
           <li><a href="#contact">연락</a></li>
         </ul>
       </nav>
@@ -30,171 +30,208 @@
     <section class="hero" aria-labelledby="h-name">
       <div class="wrap hero-grid">
         <div class="profile reveal">
-          <p class="eyebrow">예비 웹 개발자 · 2026.08.25 기준</p>
+          <p class="eyebrow">네트워크 보안 엔지니어 지원 · 2026.11 기준</p>
           <h1 id="h-name">김상혁</h1>
-          <p class="tagline">막힌 화면 앞에서도 나만의 방법을 만들어 다시 앞으로 나아가는 사람</p>
-          <p class="summary">부사관으로 군 복무를 마치고 2026년 7월 전역했습니다. 8월 11일 SKT ALEPH 교육과정을 시작해 웹 개발을 배우며, 매일 아침·저녁 기록을 남기고 과제 결과물을 공개 주소로 배포하고 있습니다.</p>
+          <p class="tagline">공격이 들어오는 길을 직접 열어 보고, 막히는지 재고, 되돌린 뒤 기록으로 남깁니다</p>
+          <p class="summary">약 9년의 군 복무를 마치고 SKT ALEPH 교육과정에서 보안관제를 배웠습니다. 4인 팀 프로젝트에서 PC 4대와 팀 VPN 위에 가상 공공기관의 보안관제망을 꾸미고, Wazuh 관제 서버와 사건 기록(티켓) 시스템을 맡아 공격 → 탐지 → 자동 대응 → 원복 흐름을 실측했습니다.</p>
           <p class="actions">
-            <a class="btn" href="#projects">참여 프로젝트 보기</a>
+            <a class="btn" href="#aleph">ALEPH 프로젝트 보기</a>
             <a class="btn ghost" href="https://github.com/shk12170-dev" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (새 탭)</span></a>
           </p>
         </div>
 
-        <section class="panel reveal" aria-labelledby="h-now">
-          <h2 id="h-now">지금 하는 활동</h2>
-          <ul class="list">
-            <li><strong>SKT ALEPH 교육과정</strong> 2026.08.11 시작, 웹 개발 실습과 과제 수행</li>
-            <li><strong>리추얼 기록</strong> 아침 목표, 마무리 한 줄을 매일 작성</li>
-            <li><strong>과제 배포</strong> 1~3번 과제를 GitHub에 올리고 공개 주소로 열기</li>
+        <section class="panel reveal" aria-labelledby="h-metric">
+          <h2 id="h-metric">실측 예시 · S1 첫 실제 회차</h2>
+          <ul class="metrics">
+            <li><span class="num">59.6초</span><span class="lbl">공격 조건 충족 → 탐지</span></li>
+            <li><span class="num">1.0초</span><span class="lbl">탐지 → 자동 차단</span></li>
+            <li><span class="num">40.3초</span><span class="lbl">탐지 → 차단 효과(403) 확인</span></li>
           </ul>
+          <p class="small">2026-10-28, 격리된 랩·시험 계정으로 측정한 1회 값입니다.</p>
         </section>
 
-        <section class="panel reveal" aria-labelledby="h-proof">
-          <h2 id="h-proof">직접 열어 볼 수 있는 근거</h2>
-          <p>로그인 없이 열리는 결과물입니다.</p>
+        <section class="panel reveal" aria-labelledby="h-role">
+          <h2 id="h-role">팀에서 맡은 일</h2>
           <ul class="list">
-            <li><a href="https://survival-xi-seven.vercel.app/" target="_blank" rel="noopener noreferrer">생존 게임<span class="sr-only"> (새 탭)</span></a> — 20회 플레이 기록표 포함</li>
-            <li><a href="https://shk12170-dev.github.io/studio/" target="_blank" rel="noopener noreferrer">Moment Studio<span class="sr-only"> (새 탭)</span></a> — 12가지 극단 입력 검사표 포함</li>
+            <li><strong>Wazuh 4.9.0 관제 서버</strong> agent 등록, 웹 루트 실시간 FIM, Graylog 전달</li>
+            <li><strong>티켓 저장소·보안 대시보드</strong> Flask + SQLite, Docker, n8n 키 인증 연동</li>
+            <li><strong>사건 마감 확인</strong> 효과 확인 · 남은 조치 0건 · 사건 종료</li>
           </ul>
         </section>
       </div>
     </section>
 
     <section id="skills" class="wrap block" aria-labelledby="h-skills">
-      <h2 id="h-skills">기술 스펙</h2>
-      <p class="lead">교육과정 2주 차 기준, 과제에서 직접 써 본 것만 적었습니다.</p>
+      <h2 id="h-skills">기술</h2>
+      <p class="lead">ALEPH 프로젝트에서 직접 설정하거나 시험한 것을 기준으로 적었습니다. 팀원이 주로 맡은 영역은 함께 운영한 수준으로 구분했습니다.</p>
       <div class="skill-grid">
         <div class="card">
-          <h3>프론트엔드</h3>
-          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>LocalStorage</li></ul>
+          <h3>보안관제 · SIEM</h3>
+          <ul class="chips"><li>Wazuh 4.9.0</li><li>FIM(syscheck)</li><li>Active Response</li><li>Graylog 6.1.16</li><li>파이프라인 파싱</li></ul>
+          <p class="small">Wazuh는 직접 구축·운영, Graylog는 입력·스트림·파서 설정</p>
         </div>
         <div class="card">
-          <h3>배포·협업</h3>
-          <ul class="chips"><li>Git</li><li>GitHub</li><li>GitHub Pages</li><li>Vercel</li></ul>
+          <h3>네트워크 · 방화벽</h3>
+          <ul class="chips"><li>TCP/UDP 전송 특성</li><li>포트 노출 점검</li><li>Windows 방화벽 규칙</li><li>pfSense</li><li>OpenVPN</li><li>Suricata</li></ul>
+          <p class="small">pfSense·OpenVPN·Suricata는 팀원 구축, 규칙 요청·경로 시험에 참여</p>
         </div>
         <div class="card">
-          <h3>검증·문서</h3>
-          <ul class="chips"><li>기능 검사표</li><li>수정 전후 기록</li><li>README</li></ul>
+          <h3>자동 대응 · 개발</h3>
+          <ul class="chips"><li>n8n 2.39.5 연동</li><li>Python</li><li>Flask</li><li>SQLite</li><li>REST API 설계</li><li>pytest</li></ul>
         </div>
         <div class="card">
-          <h3>AI 활용</h3>
-          <ul class="chips"><li>AI와 함께 코딩</li><li>결과 직접 검증</li></ul>
+          <h3>인프라 · 협업</h3>
+          <ul class="chips"><li>Docker Compose</li><li>VMware</li><li>Kali Linux</li><li>Git · GitHub PR</li><li>증적·작업일지</li></ul>
         </div>
       </div>
       <p class="note">학습·준비 중: 정보처리기사, SQL 자격증</p>
     </section>
 
-    <section id="projects" class="wrap block" aria-labelledby="h-proj">
-      <h2 id="h-proj">참여 프로젝트</h2>
-      <p class="lead">제목을 누르면 상황·행동·결과가 펼쳐집니다. 키보드는 Tab으로 이동해 Enter 또는 Space를 누르세요.</p>
+    <section id="aleph" class="wrap block" aria-labelledby="h-aleph">
+      <h2 id="h-aleph">ALEPH — 해담시청 통합 보안관제 및 자동 대응</h2>
+      <p class="lead">2026.10 ~ 진행 중 (본발표 2026.11.06) · 4인 팀 NoBugs(반소람 · 김명준 · 김상혁 · 김대훈) · 저는 C 자리, Wazuh와 사건 기록 담당</p>
 
+      <div class="card-grid two">
+        <article class="card">
+          <h3>무엇을 만들었나</h3>
+          <p>가상의 공공기관 '해담시청'의 민원 포털, 내부 업무망, 외주업체 VPN, 보안관제망을 학원 PC 4대에 나눠 구성했습니다. 그 위에서 허가된 공격을 실제로 넣고 ① 자동으로 찾는지 ② 자동으로 막는지 ③ 기록이 남는지 ④ 원래대로 되돌릴 수 있는지 ⑤ 그동안 정상 사용자는 막히지 않는지를 측정했습니다.</p>
+        </article>
+        <article class="card">
+          <h3>설계 원칙</h3>
+          <ul class="list plain">
+            <li><strong>기본은 차단</strong> 외부에는 포털 웹 서비스만, PC 사이는 팀 VPN으로 필요한 포트만 허용</li>
+            <li><strong>서비스와 관제 분리</strong> 포털·DB 장애가 탐지·기록에 번지지 않게, Graylog와 Wazuh도 다른 PC</li>
+            <li><strong>허가된 호출만</strong> 허용 주소 + 비밀 키가 없으면 403, 기본은 관찰 모드(dry_run)</li>
+            <li><strong>원복은 사람이</strong> 자동 대응 뒤 해제·종료는 담당자가 확인하며 수행</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="sub">구성과 대응 경로</h3>
+      <figure class="arch" aria-labelledby="arch-cap">
+        <ol class="flow">
+          <li><span class="step">① 공격</span><span class="who">Kali (203.0.113.11~31)</span><span class="desc">pfSense를 거쳐 포털 웹으로</span></li>
+          <li><span class="step">② 수집</span><span class="who">포털 GELF · pfSense Syslog · Wazuh 경보</span><span class="desc">로그가 Graylog로 모임</span></li>
+          <li><span class="step">③ 탐지</span><span class="who">Graylog 6.1.16</span><span class="desc">케이스별 규칙, 반복 알림 억제</span></li>
+          <li><span class="step">④ 자동 대응</span><span class="who">n8n 2.39.5</span><span class="desc">포털 IP 차단 · 계정 잠금 · pfSense 차단 · 티켓 기록</span></li>
+          <li><span class="step">⑤ 효과 확인</span><span class="who">403 · timeout · 잠금</span><span class="desc">정상 사용자(.100)는 200 유지</span></li>
+          <li><span class="step">⑥ 원복</span><span class="who">담당자 + 티켓 저장소</span><span class="desc">해제 → 재접속 200 → 남은 조치 0건 → 종료</span></li>
+        </ol>
+        <figcaption id="arch-cap">PC 4대: 네트워크 PC(pfSense·Suricata·OpenVPN, Kali) · 포털 PC(React + Flask, MySQL 8.4, Wazuh agent) · Graylog PC(Graylog, n8n) · Wazuh PC(Wazuh, 티켓 저장소·대시보드). 시험 한 번을 '포털 원본 로그 번호 → Graylog 탐지 → n8n 실행 번호 → 티켓 번호'로 끝까지 대조했습니다.</figcaption>
+      </figure>
+
+      <h3 class="sub">검증한 공격 시나리오</h3>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">시나리오별 실제 차단 모드 완주 회차</caption>
+          <thead><tr><th scope="col">케이스</th><th scope="col">공격</th><th scope="col">자동 대응</th><th scope="col">실제 차단 모드 완주</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">S1</th><td>비밀번호를 천천히 맞혀 보는 공격</td><td>포털 IP 차단(403)</td><td>10/28 — 탐지 59.6초, 차단 1.0초</td></tr>
+            <tr><th scope="row">S4</th><td>여러 번 틀린 뒤 로그인 성공</td><td>계정 잠금 · 세션 회수</td><td>11/03 — 자동 잠금 6.975초</td></tr>
+            <tr><th scope="row">S8</th><td>없는 페이지 탐색(404) 뒤 로그인 시도(401)</td><td>포털 IP 차단(403)</td><td>11/03 — 차단까지 37.9초</td></tr>
+            <tr><th scope="row">S10</th><td>홈페이지와 방화벽을 함께 두드리는 공격</td><td>포털 + pfSense 차단(timeout)</td><td>11/03 — 탐지 55.9초</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">네 케이스 모두 '탐지 → 자동 대응 → 효과 확인 → 되돌리기'를 끝까지 확인한 회차가 있지만, 케이스별 1~2회입니다. 5회 반복 검증과 원복 자동화는 끝내지 못했고, 일부만 확인된 반복·시연 회차는 성공 집계에서 뺐습니다.</p>
+
+      <h3 class="sub">제가 맡은 부분</h3>
       <div class="acc">
-        <h3><button type="button" class="acc-btn" id="b1" aria-expanded="false" aria-controls="p1"><span class="tag">과제 1</span> 공개 소개 페이지</button></h3>
+        <h4><button type="button" class="acc-btn" id="b1" aria-expanded="false" aria-controls="p1"><span class="tag">Wazuh</span> 관제 서버 구축과 웹 루트 실시간 FIM</button></h4>
         <div id="p1" class="acc-panel" role="region" aria-labelledby="b1">
           <dl>
-            <dt>상황</dt><dd>처음 온 사람이 계정 없이 볼 수 있는 소개 페이지가 필요했습니다.</dd>
-            <dt>행동</dt><dd>정적 HTML로 소개 페이지를 만들고 GitHub Pages에 배포했습니다.</dd>
-            <dt>결과</dt><dd>로그인 없이 열리는 공개 페이지를 확보했습니다. 지금 보고 있는 이 페이지가 그 개선본입니다.</dd>
-            <dt>스택</dt><dd>HTML · CSS · JavaScript · GitHub Pages</dd>
+            <dt>상황</dt><dd>홈페이지 변조(S7, 무결성)를 잡으려면 포털 웹 파일의 변경을 실시간으로 받아야 했고, Wazuh 관제 서버는 다른 PC에 있었습니다.</dd>
+            <dt>행동</dt><dd>Docker로 Wazuh 4.9.0 manager를 운영하고 포털 VM agent를 팀 VPN 경로로 등록했습니다. 웹 루트에 realtime FIM을 걸고 추가(554)·변경(550)·삭제(553)·원본 복원 경보를 시험했습니다.</dd>
+            <dt>결과</dt><dd>추가·변경·삭제 3/3, 복원 시험 4/4 경보가 0.5~1.0초 안에 수신됐습니다. 11/02에 FIM 경보와 같은 파일의 웹 접근을 묶는 상관 규칙이 발동해 실제 티켓 1건이 저장·종료됐습니다. 단, n8n → Wazuh Active Response 자동 복구는 시험하지 못했습니다(수동 API 호출 6회만 확인).</dd>
+            <dt>기술</dt><dd>Wazuh agent · syscheck · Active Response API · Graylog 파이프라인</dd>
           </dl>
         </div>
       </div>
-
       <div class="acc">
-        <h3><button type="button" class="acc-btn" id="b2" aria-expanded="false" aria-controls="p2"><span class="tag">과제 2</span> 생존 게임 — 상태 보존 규칙</button></h3>
+        <h4><button type="button" class="acc-btn" id="b2" aria-expanded="false" aria-controls="p2"><span class="tag">티켓</span> 티켓 저장소와 보안 대시보드</button></h4>
         <div id="p2" class="acc-panel" role="region" aria-labelledby="b2">
           <dl>
-            <dt>상황</dt><dd>새 게임을 시작할 때 무엇을 초기화하고 무엇을 남길지 규칙이 없어 값이 뒤섞였습니다.</dd>
-            <dt>행동</dt><dd>보존할 값과 초기화할 값의 규칙을 문서로 정하고, 변경 전과 후로 각각 10회씩 플레이해 기록을 비교했습니다.</dd>
-            <dt>결과</dt><dd>규칙 문서와 20회 플레이 기록표를 남겨, 값 하나의 변경이 결과에 주는 영향을 근거로 설명할 수 있게 했습니다. <a href="https://survival-xi-seven.vercel.app/" target="_blank" rel="noopener noreferrer">공개 화면 열기<span class="sr-only"> (새 탭)</span></a></dd>
-            <dt>스택</dt><dd>JavaScript · LocalStorage · Vercel</dd>
+            <dt>상황</dt><dd>n8n이 한 자동 조치와 사람이 되돌린 조치를 한곳에 남기고, 해제되지 않은 차단이 남은 채 사건이 닫히는 일을 막아야 했습니다.</dd>
+            <dt>행동</dt><dd>Flask + SQLite로 저장소를 만들고 포트를 둘로 나눴습니다. n8n 기록용 API는 VPN 주소에만 열고 비밀 키를 요구하며, 대시보드는 로컬(127.0.0.1)에서만 열리게 했습니다. 같은 사건은 티켓 1건·조치 1회로 합치고, 해제 안 된 조치가 남으면 종료를 거절(409)하게 했습니다.</dd>
+            <dt>결과</dt><dd>S1·S4·S8·S10·S7 실제 회차의 티켓이 이 저장소에 기록·종료됐습니다. 컨테이너 메모리 약 26MiB, 저장소 테스트 107개 통과(10/23 기준).</dd>
+            <dt>기술</dt><dd>Python · Flask · SQLite · Docker Compose · JSON Schema 계약 · pytest</dd>
           </dl>
         </div>
       </div>
-
       <div class="acc">
-        <h3><button type="button" class="acc-btn" id="b3" aria-expanded="false" aria-controls="p3"><span class="tag">과제 3</span> Moment Studio — 극단 입력 검사</button></h3>
+        <h4><button type="button" class="acc-btn" id="b3" aria-expanded="false" aria-controls="p3"><span class="tag">마감</span> 효과 확인 · 남은 조치 0건 · 사건 종료</button></h4>
         <div id="p3" class="acc-panel" role="region" aria-labelledby="b3">
           <dl>
-            <dt>상황</dt><dd>정상 입력에서는 잘 동작했지만 극단적인 입력에서 화면이 깨졌습니다.</dd>
-            <dt>행동</dt><dd>12가지 극단 입력 검사표를 만들어 하나씩 넣어 보고, 대표 결함을 골라 수정 전후를 기록했습니다.</dd>
-            <dt>결과</dt><dd>고친 이유를 화면이 아니라 검사 결과로 설명할 수 있는 문서를 남겼습니다. <a href="https://shk12170-dev.github.io/studio/" target="_blank" rel="noopener noreferrer">공개 화면 열기<span class="sr-only"> (새 탭)</span></a></dd>
-            <dt>스택</dt><dd>HTML · CSS · JavaScript · GitHub Pages</dd>
+            <dt>상황</dt><dd>시험 한 회차는 네 명이 순서대로 넘겨받아 진행했고, "되돌렸다는 기록"과 "실제 회복"이 섞이면 결과를 믿을 수 없었습니다.</dd>
+            <dt>행동</dt><dd>회차마다 기록 항목을 대조해 효과 확인을 완료하고, 해제 뒤 남은 조치가 0건인지 확인한 다음 사건을 종료했습니다.</dd>
+            <dt>결과</dt><dd>회복을 직접 확인한 회차만 성공으로 세는 기준을 팀이 함께 지켰고, 발표에서도 일부만 확인된 회차를 따로 보고했습니다.</dd>
           </dl>
         </div>
       </div>
     </section>
 
-    <section id="career" class="wrap block" aria-labelledby="h-career">
-      <h2 id="h-career">경력 — 농구선수와 직업군인</h2>
-      <p class="lead">중·고등학교 시절 농구선수로 뛰었고, 2017년 10월 입대해 병사와 부사관으로 약 9년 군 생활을 한 뒤 2026년 7월 전역했습니다.</p>
+    <section id="troubleshoot" class="wrap block" aria-labelledby="h-ts">
+      <h2 id="h-ts">네트워크 문제 해결 기록</h2>
+      <p class="lead">원인을 추측으로 끝내지 않고, 시험으로 좁혀서 고친 사례입니다.</p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>큰 UDP 경보가 사라진다</h3>
+          <p><strong>문제</strong> Wazuh → Graylog로 보낸 파일 변경 경보(550) 일부가 도착하지 않았습니다.</p>
+          <p><strong>원인 확인</strong> 크기별로 보내 보니 1,300B는 3/3 도착, 1,500·2,000B는 0/3. Wazuh syslog 출력은 UDP만 지원하는데, 약 1,400B를 넘는 UDP가 VPN 경로에서 유실됐습니다.</p>
+          <p><strong>해결</strong> Wazuh PC 안에서 UDP를 받아 TCP로 넘기는 중계를 두고 Graylog 입력을 TCP로 바꿔 550·553·554 수신을 확인했습니다.</p>
+        </article>
+        <article class="card">
+          <h3>VPN만 허용했는데 포트가 열려 있다</h3>
+          <p><strong>문제</strong> Wazuh agent 통신 포트에 VPN 대역만 허용 규칙을 넣었는데 학원 유선망에서도 접속됐습니다.</p>
+          <p><strong>원인 확인</strong> Docker Desktop이 만든 허용 규칙이 출발지 제한 없이 포트를 열고 있었습니다.</p>
+          <p><strong>해결</strong> 허용보다 우선하는 차단 규칙을 추가하고, 포털 VM에서 다시 시험해 VPN 경로만 연결되는 것을 확인했습니다. Wazuh API도 Graylog PC만 허용하고, n8n용 최소 권한 계정을 따로 만들었습니다.</p>
+        </article>
+        <article class="card">
+          <h3>agent 등록이 계속 거부된다</h3>
+          <p><strong>문제</strong> 포털 agent 등록이 IP 조건에 걸려 거부되고, 자동 재등록으로 agent ID가 여러 개 생겼습니다.</p>
+          <p><strong>원인 확인</strong> manager가 본 출발지는 VPN 주소가 아니라 Docker Desktop 게이트웨이 주소였습니다.</p>
+          <p><strong>해결</strong> 중복 ID를 정리하고 manager에서 키를 만들어 수동 등록, 자동 등록은 껐습니다. 같은 이유로 티켓 저장소는 출발지 IP 대신 포트·공개 주소로 접근을 나눴습니다.</p>
+        </article>
+      </div>
+      <p class="note">남은 한계: VPN이 다시 연결되는 동안 경보 일부가 늦거나 빠질 수 있음을 확인해, 시험 중에는 VPN 재시작을 금지하는 운영 규칙으로 대응했습니다.</p>
+    </section>
 
+    <section id="career" class="wrap block" aria-labelledby="h-career">
+      <h2 id="h-career">경력</h2>
+      <p class="lead">병사와 부사관으로 약 9년 복무하며 정해진 절차를 지키고 근무를 교대로 이어받는 일을 해 왔습니다. 시험 한 회차를 네 명이 순서대로 넘겨받는 관제 운영에도 그 습관을 그대로 썼습니다.</p>
       <ol class="timeline">
         <li>
-          <p class="when">2012.10 ~ 2014.04</p>
-          <h3>아마추어 농구선수</h3>
-          <p>중학교 3학년부터 고등학교 1학년까지 포워드와 센터 포지션을 맡았습니다.</p>
-        </li>
-        <li>
-          <p class="when">2017.10 ~ 2019.07</p>
-          <h3>육군 병사 복무</h3>
-          <p>병사로 입대해 복무를 마치고 만기 전역했습니다.</p>
+          <p class="when">2026.08.11 ~ 2026.11</p>
+          <h3>SKT ALEPH 교육과정</h3>
+          <p>웹 개발 기초 과제(소개 페이지, 게임, 입력 검사) 뒤 보안관제 캡스톤 ALEPH 수행, 11/06 본발표.</p>
         </li>
         <li>
           <p class="when">2019.07 ~ 2026.07</p>
           <h3>육군 부사관 복무</h3>
-          <p>전역 직후 부사관으로 임관해 군 생활을 이어갔습니다.</p>
+          <p>GOP 근무를 포함해 복무를 마치고 2026년 7월 전역했습니다.</p>
         </li>
         <li>
-          <p class="when">2022.04 ~</p>
-          <h3>GOP 근무와 회복</h3>
-          <dl class="mini">
-            <dt>상황</dt><dd>2주에 하루 외박을 빼면 출퇴근 구분이 없었고, 답답할 때 고를 수 있는 선택지가 거의 없었습니다.</dd>
-            <dt>행동</dt><dd>심신 회복이 필요하다고 판단해 원소속 부대로 복귀했고, 파견 근무를 거치며 생활 리듬을 되찾았습니다.</dd>
-            <dt>결과</dt><dd>남은 복무를 마치고 2026년 7월 전역했습니다.</dd>
-          </dl>
+          <p class="when">2017.10 ~ 2019.07</p>
+          <h3>육군 병사 복무</h3>
+          <p>병사로 입대해 만기 전역한 뒤 부사관으로 임관했습니다.</p>
         </li>
         <li>
-          <p class="when">2026.08.11 ~</p>
-          <h3>SKT ALEPH 교육과정</h3>
-          <p>AI를 다룰 수 있으면 쓸 데가 있겠다는 생각으로 신청해 웹 개발을 배우고 있습니다.</p>
+          <p class="when">2012.10 ~ 2014.04</p>
+          <h3>아마추어 농구선수</h3>
+          <p>포워드·센터로 뛰며 팀 안에서 맡은 역할을 지키는 법을 배웠습니다.</p>
         </li>
       </ol>
     </section>
 
-    <section id="strengths" class="wrap block" aria-labelledby="h-str">
-      <h2 id="h-str">기록으로 확인되는 강점</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>막혀도 방법을 만든다</h3>
-          <p><strong>상황</strong> 8월 실습 중 오류 하나가 그날 진도를 막았습니다.</p>
-          <p><strong>행동</strong> 쉬는 시간에 "나는 할 수 있다"고 속으로 외치고 다시 화면으로 돌아갔습니다.</p>
-          <p><strong>결과</strong> 8월 25일 마무리 기록에 그 방법을 적었고, 다음 날 아침에 한 번 더 쓰기로 했습니다.</p>
-        </article>
-        <article class="card">
-          <h3>질문하기 쉬운 분위기를 만든다</h3>
-          <p><strong>상황</strong> 매일 아침 함께 수업을 듣는 동료들과 하루를 시작합니다.</p>
-          <p><strong>행동</strong> 부드럽게 말을 건네고 편하게 질문을 주고받았습니다.</p>
-          <p><strong>결과</strong> 8월 21일 동료가 "질문이 자연스러운 분위기로 부드럽게 만들어준다"고 적어 주었습니다.</p>
-        </article>
-        <article class="card">
-          <h3>고친 이유를 검사로 남긴다</h3>
-          <p><strong>상황</strong> 극단 입력에서 화면이 깨졌습니다.</p>
-          <p><strong>행동</strong> 12가지 검사표를 만들어 하나씩 넣어 보고 수정 전후를 기록했습니다.</p>
-          <p><strong>결과</strong> 검사표와 수정 전후 비교 문서가 공개 저장소에 남아 있습니다.</p>
-        </article>
-      </div>
-    </section>
-
     <section id="contact" class="wrap block" aria-labelledby="h-contact">
       <h2 id="h-contact">연락 · 소스</h2>
-      <p>결과물의 소스 코드와 과제 문서는 GitHub에서 로그인 없이 볼 수 있습니다.</p>
+      <p>팀 프로젝트 저장소는 비공개입니다. 개인 저장소와 이 페이지의 소스는 GitHub에서 볼 수 있습니다.</p>
       <p class="actions"><a class="btn" href="mailto:shk12170@gmail.com">shk12170@gmail.com</a> <a class="btn" href="https://github.com/shk12170-dev" target="_blank" rel="noopener noreferrer">github.com/shk12170-dev<span class="sr-only"> (새 탭)</span></a></p>
     </section>
   </main>
 
   <footer class="foot">
-    <div class="wrap"><p>© 2026 김상혁 · 2026.08.25 기준으로 작성</p></div>
+    <div class="wrap"><p>© 2026 김상혁 · 2026.11 기준 · 수치는 격리된 학습 랩에서 측정한 값입니다</p></div>
   </footer>
 
   <script src="script.js"></script>
