@@ -164,3 +164,8 @@ tbody th { color: var(--accent-dark); }
   .metrics .num { font-size: 22px; min-width: 76px; }
   th, td { padding: 8px 10px; }
 }
+.ok, .no { display: inline-block; border-radius: 6px; padding: 1px 8px; font-size: 14px; font-weight: 700; white-space: nowrap; }
+.ok { background: #dcfce7; color: #14532d; }
+.no { background: #fde2e2; color: #7f1d1d; }
+tbody th { min-width: 7em; }
+#aleph tbody th { min-width: 0; }

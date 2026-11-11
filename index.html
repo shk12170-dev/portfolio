@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>김상혁 | 네트워크 보안 엔지니어 포트폴리오</title><link rel="icon" href="data:,">
   <meta name="description" content="네트워크 보안 엔지니어 지원자 김상혁의 포트폴리오. PC 4대와 팀 VPN 위에 보안관제망을 구성하고 공격 탐지·자동 대응·원복을 실측한 ALEPH 프로젝트를 담았습니다.">
+  <link rel="canonical" href="https://shk12170-portfolio.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="김상혁 포트폴리오">
+  <meta property="og:title" content="김상혁 | 네트워크 보안 엔지니어 포트폴리오">
+  <meta property="og:description" content="PC 4대와 팀 VPN 위에 보안관제망을 구성하고 공격 탐지 → 자동 대응 → 원복을 실측한 ALEPH 프로젝트">
+  <meta property="og:url" content="https://shk12170-portfolio.vercel.app/">
+  <meta property="og:image" content="https://shk12170-portfolio.vercel.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="김상혁 네트워크 보안 엔지니어 포트폴리오 — 탐지 59.6초, 차단 1.0초, 효과 확인 40.3초">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +29,7 @@
         <ul>
           <li><a href="#skills">기술</a></li>
           <li><a href="#aleph">ALEPH 프로젝트</a></li>
+          <li><a href="#s7">S7 변조 탐지</a></li>
           <li><a href="#troubleshoot">문제 해결</a></li>
           <li><a href="#career">경력</a></li>
           <li><a href="#contact">연락</a></li>
@@ -168,6 +181,45 @@
           </dl>
         </div>
       </div>
+    </section>
+
+    <section id="s7" class="wrap block" aria-labelledby="h-s7">
+      <h2 id="h-s7">개인 케이스 S7 — 홈페이지 변조 탐지와 복구</h2>
+      <p class="lead">팀이 자리마다 하나씩 맡은 케이스 중 제 몫(무결성)입니다. 탐지·수동 복구까지는 확인했지만 자동 복구 완주는 못 해서, 최종 발표의 네 케이스(S1·S4·S8·S10)에는 들어가지 않았습니다.</p>
+
+      <div class="card-grid two">
+        <article class="card">
+          <h3>문제 정의</h3>
+          <p>웹 루트 파일이 바뀌었다는 경보만으로는 정상 배포·복구와 공격을 구분하기 어렵습니다. 그래서 <strong>"웹 파일이 바뀌거나 새로 생겼고, 그 파일이 실제로 외부에 응답됐다"</strong>를 사건으로 정의했습니다.</p>
+          <p><strong>보강 전 1회(10/22)</strong> 새 파일을 만들자 FIM 경보는 왔지만 외부 요청이 그 파일을 200으로 받아 갔고, 상관 탐지·복구·티켓은 0건이었습니다. 이 결과를 기준선으로 삼았습니다.</p>
+        </article>
+        <article class="card">
+          <h3>탐지와 대응 설계</h3>
+          <ul class="list plain">
+            <li><strong>상관 탐지</strong> Wazuh 실시간 FIM(추가·변경)과 포털 웹 접근 로그를 같은 파일 키로 묶어 Graylog에서 판정</li>
+            <li><strong>오탐 줄이기</strong> 변경 뒤 해시가 기준본 목록과 같으면(복구·정상 배포) 신호를 붙이지 않고, 삭제 경보는 발동 조건에서 제외</li>
+            <li><strong>대응</strong> Wazuh Active Response로 바뀐 파일은 기준본으로 복구, 새 파일은 격리 폴더로 이동</li>
+            <li><strong>최소 권한</strong> 자동화 계정은 포털 agent 하나에 대해 Active Response 실행만 허용</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="sub">확인한 것과 못 한 것</h3>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">S7 검증 현황</caption>
+          <thead><tr><th scope="col">항목</th><th scope="col">결과</th><th scope="col">근거</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">실시간 FIM 수집</th><td><span class="ok">확인</span></td><td>추가·변경·삭제·복원 경보가 Graylog에 0.5~1.0초 안에 도착(10/21)</td></tr>
+            <tr><th scope="row">수동 복구·격리</th><td><span class="ok">확인</span></td><td>Wazuh API로 Active Response 6회 호출(10/28·29). 변조된 index.html은 복구 뒤 해시가 기준본과 전체 일치, 새 파일은 웹 루트에서 빠지고 격리본 해시 일치. 복구로 생긴 경보에는 탐지 신호가 붙지 않음</td></tr>
+            <tr><th scope="row">자동 상관 탐지</th><td><span class="ok">확인</span></td><td>11/02 FIM + 같은 파일 웹 접근으로 탐지 → n8n 호출(관찰 모드 1회), 실제 티켓 저장·종료 1회</td></tr>
+            <tr><th scope="row">n8n → 자동 복구</th><td><span class="no">미시험</span></td><td>워크플로는 준비했지만 실제 실행 회차 없음</td></tr>
+            <tr><th scope="row">정상 배포 예외</th><td><span class="no">미시험</span></td><td>기준본 해시 목록을 탐지 규칙에 넣는 작업 미완료</td></tr>
+            <tr><th scope="row">보강 후 반복(5회)</th><td><span class="no">0회</span></td><td>일정 안에 진행하지 못함</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">배운 점: 탐지 규칙보다 "복구가 다시 경보를 만든다"는 부작용을 먼저 다뤄야 자동 대응이 스스로를 공격으로 오인하지 않습니다. 복구 경보를 기준본 해시로 걸러낸 것이 이 케이스에서 가장 의미 있게 확인한 부분입니다.</p>
     </section>
 
     <section id="troubleshoot" class="wrap block" aria-labelledby="h-ts">
