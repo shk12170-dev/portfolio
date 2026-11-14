@@ -372,3 +372,12 @@ html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="
   .bar-val { grid-column: 3; grid-row: 2; }
 }
 .sec-head .meta + .lead { margin-top: 14px; }
+
+.duty { margin-top: 24px; padding: 22px 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.duty h3 { font-size: 18px; margin: 0 0 8px; }
+.duty-lead { margin: 0 0 16px; color: var(--sub); font-size: 15px; }
+.duty-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.duty-list li { padding: 16px 18px; border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+.duty-list h4 { margin: 0 0 6px; font-size: 15px; color: var(--accent); }
+.duty-list p { margin: 0; color: var(--sub); font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; word-break: keep-all; }
+@media (max-width: 760px) { .duty-list { grid-template-columns: 1fr; } .duty { padding: 18px 16px; } }
